@@ -1,67 +1,234 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity">
 
-    <!--Edits elements properties such as height, width, alignment, Id and position-->
-    <EditText
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="250dp"
-        android:layout_centerInParent="true"
-        android:hint="Enter ID here"
-        android:textAlignment="center"
-        android:id="@+id/inputID"
-        />
+        <!--Code taken from a Youtube video by Design with Hassan, can be found at the following link
+        https://www.youtube.com/watch?v=k_OJt71wEbc -->
 
-    <EditText
-        android:layout_below="@id/inputID"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_centerInParent="true"
-        android:hint="Enter username here"
-        android:textAlignment="center"
-        android:id="@+id/inputName"
-        />
+            <ImageView
+                android:id="@+id/clover"
+                android:layout_width="580dp"
+                android:layout_height="710dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/clover"
+                android:layout_marginEnd="340dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_margin="8dp"
+                 />
 
+            <LinearLayout
+                android:id="@+id/splashtext"
+                android:elevation="6dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="250dp">
 
-    <Button
-        android:id="@+id/btnSave"
-        android:layout_width="150dp"
-        android:layout_height="35dp"
-        android:layout_below="@id/inputName"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="110dp"
-        android:text="Create" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome!"
+                    android:textColor="#fff"
+                    android:textSize="34sp"
+                    android:textStyle="bold"/>
 
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="150dp"
-        android:layout_height="35dp"
-        android:layout_below="@id/btnSave"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="5dp"
-        android:text="Login" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="User!"
+                    android:textColor="#fff"
+                    android:textSize="26sp"
+                    />
 
- <!--   <TextView
-        android:id="@+id/textViewID"
-        android:layout_width="match_parent"
+            </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/hometext"
+        android:gravity="left"
+        android:elevation="6dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnLogin"
-        android:layout_marginTop="15dp"
-        android:text="Nothing to show" />
+        android:orientation="vertical"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/textViewName"
-        android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MedManager"
+            android:textColor="#fff"
+            android:textSize="31sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medication"
+            android:textColor="#fff"
+            android:textSize="22sp"
+            android:textStyle="italic"
+            />
+
+    </LinearLayout>
+
+    <!-- MENU -->
+
+    <LinearLayout
+
+        android:id="@+id/menus"
+        android:elevation="6dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewID"
-        android:layout_marginTop="10dp"
-        android:text="Nothing to show" /> -->
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        android:layout_marginTop="340dp"
+        >
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_marginLeft="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_marginRight="70dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <ImageButton
+                android:id="@+id/btnProfile"
+                android:layout_marginBottom="5dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:src="@drawable/profile"
+                android:scaleType="fitXY"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textSize="23sp"
+                android:textColor="#0e1843"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="70dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btnMedicine"
+                android:layout_marginBottom="5dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:src="@drawable/medicine"
+                android:scaleType="fitXY"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inventory"
+                android:textSize="23sp"
+                android:textColor="#0e1843"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_marginRight="95dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/btnCalendar"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:src="@drawable/calendar"
+                    android:scaleType="fitXY"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calendar"
+                    android:textSize="23sp"
+                    android:textColor="#0e1843"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/btnSettings"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:src="@drawable/bellcon"
+                    android:scaleType="fitXY"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Notifications"
+                    android:textSize="23sp"
+                    android:textColor="#0e1843"
+
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/bgapp"
+        android:layout_width="580dp"
+        android:layout_height="710dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bgapp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.923"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 

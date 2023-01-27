@@ -1,3 +1,206 @@
 <resources>
     <string name="app_name">Environment</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="google_icon">Google</string>
+    <string name="facebook_icon">Facebook</string>
+    <string name="new_user_register_now">New User</string>
+
+    <!-- Login -->
+    <string-array name="account">
+        <item>Carer</item>
+        <item>Patient</item>
+    </string-array>
+
+    <!--Hypertension-->
+    <string-array name="medicationHypertension">
+        <item>Candesartan</item>
+        <item>Doxazoin</item>
+        <item>Losartan</item>
+        <item>Telmisartan</item>
+        <item>Ramipril</item>
+        <item>Lercanidipine</item>
+        <item>Lisinopril</item>
+        <item>Spironolactone</item>
+        <item>Bumetanide</item>
+        <item>Bendroflumethiazide</item>
+        <item>Indapamide</item>
+        <item>Furosemide plus amiloride</item>
+    </string-array>
+
+    <string-array name="dosageHypertension">
+        <item>5mg</item>
+        <item>10mg</item>
+        <item>15mg</item>
+        <item>20mg</item>
+        <item>30mg</item>
+    </string-array>
+
+    <string-array name="amountHypertension">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="timeHypertension">
+        <item>8 a.m</item>
+        <item>9 a.m</item>
+        <item>10 a.m</item>
+        <item>11 a.m</item>
+        <item>12 p.m</item>
+        <item>1 p.m</item>
+        <item>2 p.m</item>
+        <item>3 p.m</item>
+        <item>5 p.m</item>
+        <item>6 p.m</item>
+        <item>7 p.m</item>
+        <item>8 p.m</item>
+        <item>9 p.m</item>
+        <item>10 p.m</item>
+    </string-array>
+
+    <!--Cholesterol-->
+    <string-array name="medicationCholesterol">
+        <item>Rosuvastatin</item>
+        <item>Ezetimbe</item>
+        <item>Simvastatin plus ezetimbe</item>
+        <item>Atorvastatin</item>
+        <item>Pravastatin</item>
+        <item>Simvastatin</item>
+    </string-array>
+
+    <string-array name="dosageCholesterol">
+        <item>5mg</item>
+        <item>10mg</item>
+        <item>15mg</item>
+        <item>20mg</item>
+        <item>30mg</item>
+    </string-array>
+
+    <string-array name="amountCholesterol">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="timeCholesterol">
+        <item>8 a.m</item>
+        <item>9 a.m</item>
+        <item>10 a.m</item>
+        <item>11 a.m</item>
+        <item>12 p.m</item>
+        <item>1 p.m</item>
+        <item>2 p.m</item>
+        <item>3 p.m</item>
+        <item>5 p.m</item>
+        <item>6 p.m</item>
+        <item>7 p.m</item>
+        <item>8 p.m</item>
+        <item>9 p.m</item>
+        <item>10 p.m</item>
+    </string-array>
+
+    <!--Antidepressants-->
+    <string-array name="medicationAntidepressants">
+        <item>Amitriptyline</item>
+        <item>Citalpram</item>
+        <item>Duloxetine</item>
+        <item>Venalfaxine</item>
+        <item>Escitalopram</item>
+        <item>Setraline</item>
+        <item>Trazodone</item>
+        <item>Lithium Citrate</item>
+        <item>Dosulepin</item>
+        <item>Fluoxetine</item>
+        <item>Paroxetine</item>
+        <item>Agomelatine</item>
+        <item>Mirtazepine</item>
+    </string-array>
+
+    <string-array name="dosageAntidepressants">
+        <item>5mg</item>
+        <item>10mg</item>
+        <item>15mg</item>
+        <item>20mg</item>
+        <item>30mg</item>
+    </string-array>
+
+    <string-array name="amountAntidepressants">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="timeAntidepressants">
+        <item>8 a.m</item>
+        <item>9 a.m</item>
+        <item>10 a.m</item>
+        <item>11 a.m</item>
+        <item>12 p.m</item>
+        <item>1 p.m</item>
+        <item>2 p.m</item>
+        <item>3 p.m</item>
+        <item>5 p.m</item>
+        <item>6 p.m</item>
+        <item>7 p.m</item>
+        <item>8 p.m</item>
+        <item>9 p.m</item>
+        <item>10 p.m</item>
+    </string-array>
+
+    <!--Epilepsy-->
+    <string-array name = "medicationEpilepsy">
+        <item>Lorazepam</item>
+        <item>Midazolam</item>
+        <item>Phenytoin</item>
+        <item>Sodium valproate</item>
+        <item>Clobazam</item>
+        <item>Perampanel</item>
+        <item>Levetiracetam</item>
+        <item>Lamotrigine</item>
+        <item>Pregabalin</item>
+        <item>Phenobarbital</item>
+        <item>Topiramate</item>
+        <item>Carbazepine</item>
+        <item>Oxcarbazepine</item>
+        <item>Lacosamide</item>
+
+    </string-array>
+
+    <string-array name="dosageEpilepsy">
+        <item>5mg</item>
+        <item>10mg</item>
+        <item>15mg</item>
+        <item>20mg</item>
+        <item>30mg</item>
+    </string-array>
+
+    <string-array name="amountEpilepsy">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="timeEpilepsy">
+        <item>8 a.m</item>
+        <item>9 a.m</item>
+        <item>10 a.m</item>
+        <item>11 a.m</item>
+        <item>12 p.m</item>
+        <item>1 p.m</item>
+        <item>2 p.m</item>
+        <item>3 p.m</item>
+        <item>5 p.m</item>
+        <item>6 p.m</item>
+        <item>7 p.m</item>
+        <item>8 p.m</item>
+        <item>9 p.m</item>
+        <item>10 p.m</item>
+    </string-array>
+
 </resources>

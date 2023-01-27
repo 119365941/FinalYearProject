@@ -6,8 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,83 +29,88 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-    //Initialised variables for use in the methods.
-    private EditText inputID, inputName;
-    private Button btnRead, btnSave, btnLogin;
-    private TextView textViewID, textViewName;
-    //Database connections
-    //Reference: https://www.youtube.com/watch?v=hXuI0nLWKTE&list=PLYx38U7gxBf3pmsHVTUwRT_lGON6ZIBHi&index=5
-    //I code from the video referenced above to connect the Firebase database.
-    private DatabaseReference rootDatabaseref;
+    //Declaring elements
+    private ImageView bgapp, clover;
+    private LinearLayout splashtext, hometext, menus;
+    private Animation frombottom;
+
+    ImageButton btnMedicine, btnCalendar, btnSettings, btnProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //Added elements to the emulator upon load.
-        inputID = findViewById(R.id.inputID);
-        inputName = findViewById(R.id.inputName);
 
-        //btnRead = findViewById(R.id.btnRead);
-        btnSave = findViewById(R.id.btnSave);
-        btnLogin = findViewById(R.id.btnLogin);
+        frombottom = AnimationUtils.loadAnimation(this,R.anim.frombottom);
 
-     //   textViewID = findViewById(R.id.textViewID);
-     //   textViewName = findViewById(R.id.textViewName);
+        //Adding elements to the activity
+        bgapp = (ImageView) findViewById(R.id.bgapp);
+        clover = (ImageView) findViewById(R.id.clover);
+        splashtext = (LinearLayout) findViewById(R.id.splashtext);
+        hometext = (LinearLayout) findViewById(R.id.hometext);
+        menus = (LinearLayout) findViewById(R.id.menus);
+        btnCalendar = (ImageButton) findViewById(R.id.btnCalendar);
+        btnMedicine = (ImageButton) findViewById(R.id.btnMedicine);
+        btnSettings = (ImageButton) findViewById(R.id.btnSettings);
+        btnProfile = (ImageButton) findViewById(R.id.btnProfile);
 
-        rootDatabaseref = FirebaseDatabase.getInstance().getReference().child("Users");
 
-    /*    btnRead.setOnClickListener(new View.OnClickListener() {
+        //Code taken from a Youtube video by Design with Hassan, can be found at the following link
+        //https://www.youtube.com/watch?v=k_OJt71wEbc
+
+        bgapp.animate().translationY(-1200).setDuration(800).getStartDelay();
+        clover.animate().alpha(0).setDuration(800).getStartDelay();
+        splashtext.animate().translationY(140).alpha(0).setDuration(800).getStartDelay();
+        hometext.startAnimation(frombottom);
+        menus.startAnimation(frombottom);
+
+
+        //Calls openMedicineActivity when the button is clicked.
+        btnMedicine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                rootDatabaseref.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        Person person = snapshot.getValue(Person.class);
-                        textViewID.setText("" + person.getId());
-                        textViewName.setText(person.getName());
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
+                openMedicineActivity();
             }
-        }); */
+        });
 
-        /* When the Save button is clicked, variables are initialised and changed to strings.
-           Text in textviews is assigned to the variables.
-           Used the push() function to push data from the variables to the Database as new records.*/
-        btnSave.setOnClickListener(new View.OnClickListener() {
+        btnCalendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int id = Integer.parseInt(inputID.getText().toString());
-                String name = inputName.getText().toString();
-
-                //Adds the values for ID and Name to the database as the ID and Name values for the Object User.
-                //Code Reference https://www.youtube.com/watch?v=c9W6dQQQuMI&list=PLYx38U7gxBf3pmsHVTUwRT_lGON6ZIBHi&index=13
-                String key = rootDatabaseref.push().getKey();
-                rootDatabaseref.child(key).child("ID").setValue(id);
-                rootDatabaseref.child(key).child("Name").setValue(name);
 
             }
         });
 
-        //Opens the UserLoginActivity when the Login button is clicked
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openUserLoginActivity();
+
+                openProfileActivity();
+            }
+        });
+
+        btnSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
     }
-        //Used to start the UserLoginActivity so as it can be accessed when the Login button is clicked.
-        public void openUserLoginActivity(){
-            Intent intent = new Intent(this, UserLoginActivity.class);
-            startActivity(intent);
 
-        }
+    //Used to start the MedicineActivity so as it can be accessed when the Login button is clicked.
+    public void openMedicineActivity(){
+        System.out.println("Logged in...");
+        Intent intent = new Intent(this, MedicineActivity.class);
+        startActivity(intent);
 
     }
+
+    //Used to start the ProfileActivity so as it can be accessed when the Profile button is clicked.
+    public void openProfileActivity(){
+        System.out.println("Logged in...");
+        Intent intent = new Intent(this, AccountActivity.class);
+        startActivity(intent);
+
+    }
+
+}
